@@ -21,7 +21,7 @@ public class Stack<Item> implements Iterable<Item> {
     /**
      * 在栈顶 插入元素 item
      */
-    private void push(Item item) {
+    public void push(Item item) {
         Node node = new Node();
         node.item = item;
         node.next = this.Top;
@@ -32,7 +32,7 @@ public class Stack<Item> implements Iterable<Item> {
     /**
      * 返回栈顶的元素
      */
-    private Item pop() {
+    public Item pop() {
         Item item = this.Top.item;
         Top = Top.next;
         N--;
