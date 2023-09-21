@@ -63,16 +63,5 @@ public class Queue<Item> implements Iterable<Item> {
         }
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        String[] s1 = s.split(" ");
 
-        Queue<String> queue = new Queue<>();
-        for (String ele : s1)
-            queue.enQueue(ele);
-
-        for (String x : queue)
-            System.out.println(x);
-    }
 }

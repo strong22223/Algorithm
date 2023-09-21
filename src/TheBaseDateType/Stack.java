@@ -66,21 +66,4 @@ public class Stack<Item> implements Iterable<Item> {
         }
     }
 
-    public static void main(String[] args) {
-
-        Stack<String> stack = new Stack<>();
-        Scanner scanner = new Scanner(System.in);
-
-        String s = scanner.nextLine();
-        String[] s1 = s.split(" ");
-        for (String word : s1)
-            stack.push(word);
-
-
-//        Iterator<String> iterator = stack.iterator();
-//        while (stack.N != 0) {
-//            System.out.println(stack.pop());
-//        }
-
-        }
     }

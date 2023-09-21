@@ -2,7 +2,14 @@ package First_base;
 
 import TheBaseDateType.Stack;
 
-public class Evaluate {
+public class Evaluate extends Counter {
+
+    private int test;
+
+    String testString;
+
+
+
     public static double calculateStringExpression(String expression) {
         //1.首先获取两个栈队的数据结构
         Stack<Double> numbers = new Stack<>();
@@ -40,11 +47,21 @@ public class Evaluate {
 
         }
         return numbers.pop();
+
     }
 
-    public static void main(String[] args) {
-        double v = Evaluate.calculateStringExpression("( 1 + ( ( 2 + 32 ) * ( 4 * 9 ) ) )");
+    void kk() {
     }
+
+//    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+//        double v = Evaluate.calculateStringExpression("( 1 + ( ( 2 + 32 ) * ( 4 * 9 ) ) )");
+//        Class<?> aClass = Class.forName("First_base.Evaluate");
+//        System.out.println(aClass);
+//        Class<Evaluate> evaluateClass = Evaluate.class;
+//        Evaluate evaluate = evaluateClass.getConstructor().newInstance();
+//        evaluate.kk();
+//
+//    }
 }
 
 
