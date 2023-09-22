@@ -79,11 +79,10 @@ public abstract class SortStandard {
         for (int k = lo; k <= hi; k++)
             aux[k] = a[k];
 
-        for (int k = lo; k <=hi; k++) {//
+        for (int k = lo; k <= hi; k++) {//
             /**
              * 在这里合并的是 lo 到 hi 两者之间的元素
              */
-
 
             if (i > mid) a[k] = aux[j++];//在前子数组 的元素结束后,直接将所有的 后子数组的元素 赋值给 a
             else if (j > hi) a[k] = aux[i++];//在后子数组 的元素结束后,直接将所有的 钱子数组的元素 赋值给 a
