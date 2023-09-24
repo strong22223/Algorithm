@@ -47,6 +47,7 @@ public class BinarySearch {
         int left = 0;
         int right = length - 1;
         int mid = left + (right - left) / 2;
+
         while (left <= right) {
             int midNumber = arrays[mid];
             if (key == midNumber) return mid;
@@ -54,7 +55,7 @@ public class BinarySearch {
             else left = mid + 1;
             mid = left + (right - left) / 2;
         }
-        return -1;
+        return -1;//未找到 返回 -1
     }
 
 }

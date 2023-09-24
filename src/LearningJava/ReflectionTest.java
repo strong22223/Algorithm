@@ -4,8 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.Calendar;
-import java.util.Deque;
+
 
 public class ReflectionTest {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
@@ -65,16 +64,28 @@ public class ReflectionTest {
             String modifier = Modifier.toString(fields.getModifiers());
             String dateType = fields.getType().getName();
             String fieldName = fields.getName();
+            System.out.println("__________________________________This is Fields");
+
             System.out.println(modifier + " " + dateType + " " + fieldName);
 
         }
     }
     public static void printMethods(Class cl){
         Method[] declaredMethod = cl.getDeclaredMethods();
+         System.out.println("__________________________________This is Methods");
         for (Method method: declaredMethod){
+            String methodName = method.getName();
             String typeName = Modifier.toString(method.getModifiers());
             Class<?> returnType = method.getReturnType();
             String returnTypeName = returnType.getName();
+
+            Class<?>[] parameterTypes = method.getParameterTypes();
+            StringBuilder parameterTypesName= new StringBuilder();
+            for (Class a: parameterTypes)
+                parameterTypesName.append(a.getName());
+
+
+            System.out.println(typeName+" "+returnTypeName+" "+methodName+" ( "+parameterTypesName+" )");
         }
 
     }
