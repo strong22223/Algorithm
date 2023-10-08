@@ -116,5 +116,15 @@ h/=3;
        }
    }
    ```
-
-   
+### PriorityQue(pq[1]存储的是最大的元素 的优先队列)
+1. 上游函数 swim() 添加一个元素的时间,从N (元素的底部开始),调用Swim () 使得 堆是有序的.
+```java
+private void swim(int index){
+    while(index>1 && less(index/2,index)){
+        exch(index,index/2);
+        index/=2;
+        }
+        
+}
+```
+2. 下沉函数 sink()

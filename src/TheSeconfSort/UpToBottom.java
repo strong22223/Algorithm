@@ -1,7 +1,9 @@
 package TheSeconfSort;
 
-public class UpToBottom extends SortStandard {
-    public UpToBottom(Comparable[] a) {
+import java.lang.reflect.Array;
+
+public class UpToBottom<T extends Comparable<T>> extends SortStandard<T> {
+    public UpToBottom(T[] a) {
         super(a);
     }
 
@@ -10,12 +12,12 @@ public class UpToBottom extends SortStandard {
      */
     @Override
     public void sort() {
-        aux = new Comparable[a.length];
+        aux =  (T[]) Array.newInstance(a.getClass().getComponentType(),a.length);
 //        sortUpToBottom(a, 0, a.length - 1);
         sortBottomToUp();
     }
 
-    private void sortUpToBottom(Comparable[] a, int lo, int hi) {
+    private void sortUpToBottom(T[] a, int lo, int hi) {
         if (lo >= hi) return;
         int mid = lo + (hi - lo) / 2;
         sortUpToBottom(a, lo, mid);//左 子数组 排序
@@ -34,12 +36,12 @@ public class UpToBottom extends SortStandard {
     }
 
     public static void main(String[] args) {
-
-        UpToBottom upToBottom = new UpToBottom(UpToBottom.Random(11));
-        upToBottom.show();
-        System.out.println("----------------------");
-        upToBottom.sort();
-        upToBottom.show();
+//
+//        var upToBottom = new UpToBottom<>(UpToBottom.Random(1000_000_000));
+//        upToBottom.show();
+//        System.out.println("----------------------");
+//        upToBottom.sort();
+//        upToBottom.show();
     }
 
 }

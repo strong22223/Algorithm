@@ -1,8 +1,8 @@
 package TheSeconfSort;
 
-public class ShellSort extends SortStandard {
+public class ShellSort<T extends Comparable<T>> extends SortStandard<T> {
 
-    public ShellSort(Comparable[] a) {
+    public ShellSort(T[] a) {
         super(a);
     }
 
@@ -14,17 +14,17 @@ public class ShellSort extends SortStandard {
         while (h >= 1) {
             for (int i = h; i < N; i += h)
                 for (int j = i; (j >= h) && (less(a[j], a[j - h])); j -= h)
-                    exch(a, j, j - 1);
+                    exchange(a, j, j - 1);
             h /= 3;
         }
     }
 
     public static void main(String[] args) {
 
-        ShellSort shellSort = new ShellSort(ShellSort.Random(10000));
-        shellSort.show();
-        System.out.println("--------------");
-        shellSort.sort();
-        shellSort.show();
+//        ShellSort<Integer> shellSort = new ShellSort<>(ShellSort.Random(1000_000));
+//        shellSort.show();
+//        System.out.println("--------------");
+//        shellSort.sort();
+//        shellSort.show();
     }
 }

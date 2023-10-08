@@ -7,9 +7,9 @@ public class Counter {
     private int count;
 
     /**
-     * 创建一个名为 id 的计数器
      *
-     * @param id
+     *
+     * @param id  创建一个名为 id 的计数器
      */
     public Counter(String id) {
         this.name = id;
@@ -27,18 +27,18 @@ public class Counter {
     }
 
     /**
-     * 计数器的值
      *
-     * @return
+     *
+     * @return 计数器的值
      */
     public int tally() {
         return count;
     }
 
     /**
-     * 对象的字符串表示
      *
-     * @return
+     *
+     * @return  对象的字符串表示
      */
     public String toString() {
         return count + " " + name;

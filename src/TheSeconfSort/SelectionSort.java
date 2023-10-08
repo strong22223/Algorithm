@@ -23,18 +23,18 @@ public class SelectionSort extends SortStandard {
             for (int j = i + 1; j < length; j++) {
                 if (less(a[j], a[min])) min = j;
             }
-            exch(a, i, min);
+            exchange(a, i, min);
         }
     }
 
     public static void main(String[] args) {
 
-        SelectionSort selectionSort = new SelectionSort(SortStandard.Random(100000));
-        selectionSort.show();
-        selectionSort.sort();
-        System.out.println("-------------------------------------");
-        selectionSort.show();
-        System.out.println(Math.random());
-        selectionSort.show();
+//        SelectionSort selectionSort = new SelectionSort(SortStandard.Random(100000));
+//        selectionSort.show();
+//        selectionSort.sort();
+//        System.out.println("-------------------------------------");
+//        selectionSort.show();
+//        System.out.println(Math.random());
+//        selectionSort.show();
     }
 }
