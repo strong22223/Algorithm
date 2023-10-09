@@ -85,7 +85,6 @@ public abstract class SortStandard<T extends Comparable<T>> {
     }
 
     public abstract void sort();
-
     /**
      * @param count  随机产生数字的数量
      * @param length 随机产生数字的位数

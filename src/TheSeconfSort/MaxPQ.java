@@ -27,6 +27,7 @@ public class MaxPQ<T extends Comparable<T>> {
      *
      * @param a 利用传入的参数 ,并且利用反射的机制 构造 泛型数组.
      */
+    @SafeVarargs
     public MaxPQ(T @NotNull ... a) {
         this.pq = (T[]) Array.newInstance(a.getClass().getComponentType(), N);
     }
@@ -118,12 +119,15 @@ public class MaxPQ<T extends Comparable<T>> {
      * @param k 下沉的元素下标
      */
     private void sink(int k) {
-        while (2 * k < N)//不是在底层找出的时间, 在这里不能同时判断是 他的两个子类哪一个是更大的
-        {
-
-            int maxSub = less(2 * k, 2 * k + 1) ? 2 * k + 1 : 2 * k;//选取子类的最小数值.
-            exch(k, maxSub);//将当前元素 .与他的最大的子类进行交换
-            k = maxSub * 2;//有可能新加入的元素在交换之后 继续小于的的子元素,所以将 K 赋值为他的 孩子的下标
+        while (2 * k <= N)//不是在底层找出的时间, 在这里不能同时判断是 他的两个子类哪一个是更大的
+        {//1. 首先去判断当前节点的 子节点 是否在数组范围内
+            int j = 2 * k;
+            //2.如果在的话,并且需要判断当前的节点是否是左孩子节点, 这样的话才能够去判断 两个节点哪一个更大
+            if (j < N && less(j, j + 1)) j++;
+            //3.再去判断当前节点是否比孩子节点小, 才能够去交换,
+            if (less(j, k)) break;
+            exch(j, k);
+            k = j * 2;//有可能新加入的元素在交换之后 继续小于的的子元素,所以将 K 赋值为他的 孩子的下标
         }
     }
 
